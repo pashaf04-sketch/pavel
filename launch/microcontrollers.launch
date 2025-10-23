@@ -1,0 +1,15 @@
+<launch>
+  <!-- Microcontroller1 -->
+  <group ns="Microcontroller1">
+    <node name="uc_pub" pkg="lab_2_pkg" type="uc_pub.py" output="screen"/>
+    <node name="timer" pkg="lab_2_pkg" type="timer.py" output="screen"/>
+    <node name="overflow_timer" pkg="lab_2_pkg" type="overflow_timer.py" output="screen"/>
+  </group>
+
+  <!-- Microcontroller2 -->
+  <group ns="Microcontroller2">
+    <node name="uc_pub" pkg="lab_2_pkg" type="uc_pub.py" output="screen"/>
+    <node name="timer" pkg="lab_2_pkg" type="timer.py" output="screen"/>
+    <node name="overflow_timer" pkg="lab_2_pkg" type="overflow_timer.py" output="screen"/>
+  </group>
+</launch>
