@@ -1,0 +1,4 @@
+<launch>
+    <node name="polynomial_node" pkg="lab3" type="polynomial.py" output="screen" />
+    <node name="summing_node"    pkg="lab3" type="summing.py"    output="screen" />
+</launch>
