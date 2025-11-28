@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- Запуск turtlesim -->
+  <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+
+  <!-- Управление черепахой с клавиатуры -->
+  <node name="teleop_turtle" pkg="turtlesim" type="turtle_teleop_key" output="screen"/>
+
+  <!-- Запуск узла, публикующего tf и маркер морковки -->
+  <node name="carrot_tf_broadcaster" pkg="lab_4" type="carrot_tf_broadcaster.py" output="screen"/>
+
+  <!-- Запуск rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lab_4)/rviz/config.rviz" />
+
+</launch>
