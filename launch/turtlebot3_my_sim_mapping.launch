@@ -1,0 +1,6 @@
+<launch>
+<arg name="rviz" default="false" />
+<include file="$(find project)/launch/minimal_tf_test.launch" />
+<include file="$(find project)/launch/turtlebot3_my_gmapping.launch" />
+<node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find project)/rviz/sim_mapping.rviz" />
+</launch>

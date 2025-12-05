@@ -1,0 +1,15 @@
+<launch>
+  <arg name="model" default="waffle_pi"/>
+  
+  <!-- Wait for map service to be available -->
+  <node pkg="rosservice" type="rosservice" name="wait_for_map" args="call --wait /static_map" />
+  
+  <!-- Small delay to ensure everything is initialized -->
+  <node pkg="rospy" type="sleep" name="navigation_delay" args="5" />
+  
+  <!-- Navigation -->
+  <include file="$(find project)/launch/my_move_base.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+</launch>
+
